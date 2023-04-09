@@ -13,14 +13,17 @@
     <table class="collapse">
         <tbody>
             <tr>
-                <td class="fx"><Image src={Sprint} alt="Hamaki" /></td>
-                <td class="gk"><Image src={Feed} alt="Hamaki" /></td>
+                <td class="fx"
+                    ><Image src={Sprint} alt="Hamaki" rainbow="" /></td
+                >
+                <td class="gk"><Image src={Feed} rainbow="" alt="Hamaki" /></td>
             </tr>
             <tr>
-                <td class="ed"><Image src={Sneup} alt="Hamaki" /></td>
+                <td class="ed"><Image src={Sneup} rainbow="" alt="Hamaki" /></td
+                >
                 <td class="tr"
                     ><a href="/project/hamaki"
-                        ><Image src={Hamaki} alt="Hamaki" /></a
+                        ><Image src={Hamaki} rainbow="" alt="Hamaki" /></a
                     ></td
                 >
             </tr>
