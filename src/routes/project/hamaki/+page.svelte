@@ -12,7 +12,8 @@
 <div class="container">
     <div class="column1">
         <div class="controls">
-            <Arrow />
+            <a href="/"> <Arrow /></a>
+
             <h1>
                 <ExternalLink src="https://hamaki.pro/" alt="Hamaki" />
             </h1>

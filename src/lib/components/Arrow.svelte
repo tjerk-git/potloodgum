@@ -16,17 +16,18 @@
 <style>
     .arrow_container {
         display: flex;
-        width: 100px;
-        height: 100px;
+        width: 65px;
+        height: 65px;
     }
+
     svg {
         display: inline-block;
     }
 
     @media screen and (max-width: 600px) {
         .arrow_container {
-            width: 50px;
-            height: 50px;
+            width: 30px;
+            height: 30px;
         }
     }
 </style>

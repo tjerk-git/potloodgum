@@ -45,7 +45,6 @@
         table-layout: fixed;
     }
 
-    table th,
     table td {
         border: 3px solid white;
         font-weight: 400;
