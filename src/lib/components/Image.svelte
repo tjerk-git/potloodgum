@@ -3,30 +3,67 @@
     export let alt;
 </script>
 
-<figure>
+<figure class="rainbow">
     <img {src} {alt} />
 </figure>
 
 <style>
     figure {
-        position: relative;
-        overflow: hidden;
-        border-radius: 20px;
+        display: flex;
+        justify-content: center;
     }
 
     figure img {
-        transition: transform 0.5s ease-in-out;
         max-width: 100%;
         max-height: 100%;
         object-fit: contain;
     }
 
-    figure:hover img {
-        transform: scale(1.2);
+    @keyframes rotate {
+        100% {
+            transform: rotate(1turn);
+        }
     }
 
-    figure:hover::before {
-        transform: skewX(0deg);
-        left: 0;
+    .rainbow {
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 2rem;
+    }
+
+    .rainbow::before {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        left: -50%;
+        top: -50%;
+        width: 200%;
+        height: 200%;
+        background-color: var(--primary-color);
+        background-repeat: no-repeat;
+        background-size: 50% 50%, 50% 50%;
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        background-image: linear-gradient(
+                var(--third-color),
+                var(--third-color)
+            ),
+            linear-gradient(var(--secondary-color), var(--secondary-color)),
+            linear-gradient(var(--primary-color), var(--primary-color)),
+            linear-gradient(var(--primary-color), var(--primary-color));
+        animation: rotate 10s linear infinite;
+    }
+
+    .rainbow::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 6px;
+        top: 6px;
+        width: calc(100% - 12px);
+        height: calc(100% - 12px);
+        background: white;
+        border-radius: 5px;
     }
 </style>

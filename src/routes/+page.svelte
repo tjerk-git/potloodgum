@@ -1,114 +1,85 @@
 <script lang="ts">
     import Feed from "$lib/images/ffwd.png";
     import Hamaki from "$lib/images/hamaki.png";
-    import Sneup from "$lib/images/sneup.jpeg";
+    import Sneup from "$lib/images/sneup.png";
     import Sprint from "$lib/images/sprint.png";
     import Image from "$lib/components/Image.svelte";
+    import Header from "$lib/components/Header.svelte";
 </script>
 
-<header>
-    <a class="faded-text savage-text" href="/" target="_blank" rel="noopener"
-        >POTLOODGUM</a
-    >
-</header>
+<Header />
 
-<div class="row">
-    <div class="column">
-        <Image src={Sneup} alt="Sneup" />
-    </div>
-    <div class="column"><Image src={Sprint} alt="Hamaki" /></div>
-
-    <div class="column"><Image src={Feed} alt="Hamaki" /></div>
-
-    <div class="column"><Image src={Hamaki} alt="Hamaki" /></div>
+<div class="container">
+    <table class="collapse">
+        <tbody>
+            <tr>
+                <td class="fx"><Image src={Sprint} alt="Hamaki" /></td>
+                <td class="gk"><Image src={Feed} alt="Hamaki" /></td>
+            </tr>
+            <tr>
+                <td class="ed"><Image src={Sneup} alt="Hamaki" /></td>
+                <td class="tr"><Image src={Hamaki} alt="Hamaki" /></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 <style>
-    header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 20vh;
-        background: linear-gradient(
-            to left,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 1) 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+    .container {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 1.2rem;
     }
 
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 0 10px;
+    .collapse {
+        border-collapse: collapse;
+        width: 100%;
     }
 
-    /* Create four equal columns that sits next to each other */
-    .column {
-        flex: 25%;
-        max-width: 25%;
-        padding: 1rem;
+    table {
+        border: 5px solid white;
+        table-layout: fixed;
     }
 
-    /* Responsive layout - makes a two column-layout instead of four columns */
-    @media screen and (max-width: 800px) {
-        .column {
-            flex: 50%;
-            max-width: 50%;
-        }
+    table th,
+    table td {
+        border: 3px solid white;
+        font-weight: 400;
+        font-size: 1.4rem;
+        padding: 1.2rem;
     }
 
-    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    tr {
+        border: 3px solid white;
+    }
+
     @media screen and (max-width: 600px) {
-        .column {
-            flex: 100%;
-            max-width: 100%;
+        table {
+            border: 0;
         }
 
-        .savage-text {
-            font-size: 2rem;
+        table tr {
+            border-bottom: 3px solid #fff;
+            display: block;
+            margin-bottom: 0.625em;
         }
-    }
 
-    @media only screen and (max-width: 480px) {
-        .savage-text {
-            font-size: 2rem !important;
+        table td {
+            border-bottom: 3px solid #fff;
+            display: block;
+            font-size: 0.8em;
+            text-align: right;
         }
-    }
 
-    .faded-text {
-        background: linear-gradient(
-            to left,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 1) 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .savage-text {
-        font-weight: 800;
-        animation: gradient-bg 30s ease infinite;
-        text-shadow: 0 0 0.3rem rgba(248, 248, 248, 0.4);
-        font-size: 5rem;
-        text-decoration: none;
-    }
-
-    .savage-text:hover {
-        transform: skew(-10deg);
-        transition: all 200ms ease-in-out;
-    }
-
-    @keyframes gradient-bg {
-        0% {
-            background-position: 0% 50%;
+        table td::before {
+            content: attr(data-label);
+            float: left;
+            font-weight: bold;
+            text-transform: uppercase;
         }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
+
+        table td:last-child {
+            border-bottom: 0;
         }
     }
 </style>
