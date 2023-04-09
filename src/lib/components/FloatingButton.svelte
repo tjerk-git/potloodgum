@@ -80,7 +80,7 @@
         padding: 20px;
         text-align: center;
         font-weight: 400px;
-        font-size: 8rem;
+        font-size: 5rem;
     }
 
     .menu_container ul li a {
