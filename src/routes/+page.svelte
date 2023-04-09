@@ -18,7 +18,11 @@
             </tr>
             <tr>
                 <td class="ed"><Image src={Sneup} alt="Hamaki" /></td>
-                <td class="tr"><Image src={Hamaki} alt="Hamaki" /></td>
+                <td class="tr"
+                    ><a href="/project/hamaki"
+                        ><Image src={Hamaki} alt="Hamaki" /></a
+                    ></td
+                >
             </tr>
         </tbody>
     </table>

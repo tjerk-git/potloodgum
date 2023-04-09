@@ -1,9 +1,10 @@
 <script>
     export let src;
     export let alt;
+    export let rainbow;
 </script>
 
-<figure class="rainbow">
+<figure class={rainbow}>
     <img {src} {alt} />
 </figure>
 
