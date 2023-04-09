@@ -13,17 +13,42 @@
     <table class="collapse">
         <tbody>
             <tr>
-                <td class="fx"
-                    ><Image src={Sprint} alt="Hamaki" rainbow="" /></td
+                <td class="fx">
+                    <a href="/project/sprintcards"
+                        ><Image
+                            src={Sprint}
+                            alt="Sprint cards design challenge"
+                            rainbow="rainbow"
+                        />
+                    </a>
+                </td>
+                <td class="gk">
+                    <a href="/project/feedforward"
+                        ><Image
+                            src={Feed}
+                            rainbow="rainbow"
+                            alt="FFWD cmd feedbacktool"
+                        /></a
+                    ></td
                 >
-                <td class="gk"><Image src={Feed} rainbow="" alt="Hamaki" /></td>
             </tr>
             <tr>
-                <td class="ed"><Image src={Sneup} rainbow="" alt="Hamaki" /></td
-                >
+                <td class="ed">
+                    <a href="/project/sneup">
+                        <Image
+                            src={Sneup}
+                            rainbow="rainbow"
+                            alt="sneup garagesale"
+                        />
+                    </a>
+                </td>
                 <td class="tr"
                     ><a href="/project/hamaki"
-                        ><Image src={Hamaki} rainbow="" alt="Hamaki" /></a
+                        ><Image
+                            src={Hamaki}
+                            rainbow="rainbow"
+                            alt="Hamaki"
+                        /></a
                     ></td
                 >
             </tr>
@@ -33,7 +58,6 @@
 
 <style>
     .container {
-        max-width: 1160px;
         margin: 0 auto;
         padding: 1.2rem;
     }

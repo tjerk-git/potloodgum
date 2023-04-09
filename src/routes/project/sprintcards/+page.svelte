@@ -1,8 +1,6 @@
 <script>
     import Header from "$lib/components/Header.svelte";
-    import ExternalLink from "$lib/components/ExternalLink.svelte";
-    import HamakiGif from "$lib/images/hamaki.gif";
-    import Hamaki from "$lib/images/hamaki.png";
+    import Sprint from "$lib/images/og_image.png";
     import Arrow from "$lib/components/Arrow.svelte";
     import Image from "$lib/components/Image.svelte";
 </script>
@@ -14,17 +12,16 @@
         <div class="controls">
             <a href="/"> <Arrow /></a>
 
-            <h1>Hamaki</h1>
+            <h1>Sprint cards</h1>
         </div>
     </div>
     <div class="column2">
         <p>
-            Hamaki allows you to draw in your own calendar to automagickly
-            &#8482; create a spot schedule and then people can sign up for spots
-            easily no accounts required.
+            Sprint cards is a design challenge generator for designers and
+            students.
         </p>
 
-        <a class="button" href="https://hamaki.pro">
+        <a class="button" href="https://sprint.cards">
             Visit this project <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -41,9 +38,8 @@
 
 <section>
     <div class="row">
-        <div class="column"><Image src={Hamaki} alt="hamaki" rainbow="" /></div>
         <div class="column">
-            <Image src={HamakiGif} alt="hamaki" rainbow="" />
+            <Image src={Sprint} alt="sprint cards" rainbow="" />
         </div>
     </div>
 </section>
