@@ -3,7 +3,8 @@
     import FloatingButton from "$lib/components/FloatingButton.svelte";
 </script>
 
+<FloatingButton />
+
 <main>
-    <FloatingButton />
     <slot />
 </main>

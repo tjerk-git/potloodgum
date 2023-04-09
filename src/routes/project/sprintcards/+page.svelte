@@ -75,7 +75,8 @@
         background: white;
         margin-left: 20px;
         margin-right: 20px;
-        padding: 1.2rem;
+        margin-left: 20px;
+        margin-right: 20px;
         display: flex;
         flex-wrap: wrap;
         border-bottom: 10px solid var(--third-color);

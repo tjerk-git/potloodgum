@@ -1,6 +1,5 @@
 <script>
     import Header from "$lib/components/Header.svelte";
-    import ExternalLink from "$lib/components/ExternalLink.svelte";
     import HamakiGif from "$lib/images/hamaki.gif";
     import Hamaki from "$lib/images/hamaki.png";
     import Arrow from "$lib/components/Arrow.svelte";
@@ -72,14 +71,14 @@
 
     h1 {
         font-weight: 400;
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     .container {
         background: white;
         margin-left: 20px;
         margin-right: 20px;
-        padding: 1.2rem;
+        padding: 20px;
         display: flex;
         flex-wrap: wrap;
         border-bottom: 10px solid var(--third-color);
@@ -89,7 +88,7 @@
     .column1,
     .column2 {
         flex: 1;
-        margin: 1rem;
+        margin: 20px;
     }
 
     p {
@@ -101,7 +100,7 @@
         margin-left: 20px;
         margin-right: 20px;
         background: white;
-        padding: 1rem;
+        padding: 20px;
         border-bottom: 10px solid var(--third-color);
     }
 

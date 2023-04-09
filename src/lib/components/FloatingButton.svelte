@@ -1,4 +1,31 @@
-<a href="mailto:tjerk.dijkstra@icloud.com" class="button">
+<script>
+    import { fade } from "svelte/transition";
+    let showMenu = false;
+
+    const toggleMenu = () => {
+        showMenu = !showMenu;
+    };
+</script>
+
+{#if showMenu}
+    <div class="menu_container" transition:fade on:click={toggleMenu}>
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="/">Projects</a>
+                </li>
+                <li>
+                    <a href="/about">About</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+{/if}
+
+<a class="button" on:click={toggleMenu}>
     <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +54,47 @@
 </a>
 
 <style>
+    .rainbow {
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 2rem;
+    }
+
+    .rainbow::before {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        left: -50%;
+        top: -50%;
+        width: 200%;
+        height: 200%;
+        background-color: var(--primary-color);
+        background-repeat: no-repeat;
+        background-size: 50% 50%, 50% 50%;
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        background-image: linear-gradient(
+                var(--third-color),
+                var(--third-color)
+            ),
+            linear-gradient(var(--secondary-color), var(--secondary-color)),
+            linear-gradient(var(--primary-color), var(--primary-color)),
+            linear-gradient(var(--primary-color), var(--primary-color));
+        animation: rotate 10s linear infinite;
+    }
+
+    .rainbow::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 6px;
+        top: 6px;
+        width: calc(100% - 12px);
+        height: calc(100% - 12px);
+        background: white;
+        border-radius: 5px;
+    }
     .button {
         position: fixed;
         top: 20px;
@@ -37,5 +105,32 @@
     .button svg {
         width: 100px;
         height: 100px;
+    }
+    .menu_container {
+        width: 100vw;
+        height: 100vh;
+        background: var(--primary-color);
+        transition: all 1s;
+    }
+    .menu_container ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .menu_container ul li {
+        padding: 20px;
+        text-align: center;
+        font-weight: 400px;
+        font-size: 8rem;
+    }
+
+    .menu_container ul li a {
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .menu_container ul li a:hover {
+        text-decoration: underline;
     }
 </style>
