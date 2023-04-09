@@ -30,7 +30,7 @@
 
 <style>
     .container {
-        max-width: 1240px;
+        max-width: 1160px;
         margin: 0 auto;
         padding: 1.2rem;
     }
