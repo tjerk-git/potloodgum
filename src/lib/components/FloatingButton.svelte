@@ -70,6 +70,9 @@
         height: 100%;
         background: var(--primary-color);
         transition: all 1s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .menu_container ul {
         list-style: none;
