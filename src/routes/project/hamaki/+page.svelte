@@ -1,8 +1,8 @@
 <script>
     import Header from "$lib/components/Header.svelte";
     import ExternalLink from "$lib/components/ExternalLink.svelte";
-    import HamakiGif from "$lib/images/Hamaki.gif";
-    import Hamaki from "$lib/images/Hamaki.png";
+    import HamakiGif from "$lib/images/hamaki.gif";
+    import Hamaki from "$lib/images/hamaki.png";
     import Arrow from "$lib/components/Arrow.svelte";
     import Image from "$lib/components/Image.svelte";
 </script>
