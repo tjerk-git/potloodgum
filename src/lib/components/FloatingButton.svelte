@@ -59,6 +59,7 @@
         top: 20px;
         right: 20px;
         z-index: 999;
+        cursor: pointer;
     }
 
     .button svg {
