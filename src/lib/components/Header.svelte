@@ -32,7 +32,7 @@
         font-weight: 800;
         animation: gradient-bg 30s ease infinite;
         text-shadow: 0 0 0.3rem rgba(248, 248, 248, 0.4);
-        font-size: 5rem;
+        font-size: 3rem;
         text-decoration: none;
     }
 

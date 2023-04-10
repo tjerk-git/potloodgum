@@ -67,7 +67,7 @@
 
     h1 {
         font-weight: 400;
-        font-size: 5rem;
+        font-size: 3rem;
     }
 
     .container {
