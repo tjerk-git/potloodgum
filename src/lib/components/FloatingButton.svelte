@@ -18,7 +18,7 @@
                     <a href="/about">About</a>
                 </li>
                 <li>
-                    <a href="/contact">Contact</a>
+                    <a href="mailto:tjerk.dijkstra@icloud.com">Contact</a>
                 </li>
             </ul>
         </nav>
