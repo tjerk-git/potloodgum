@@ -68,19 +68,13 @@
     }
 
     table {
-        border: 5px solid white;
         table-layout: fixed;
     }
 
     table td {
-        border: 3px solid white;
         font-weight: 400;
         font-size: 1.4rem;
         padding: 1.2rem;
-    }
-
-    tr {
-        border: 3px solid white;
     }
 
     @media screen and (max-width: 600px) {
