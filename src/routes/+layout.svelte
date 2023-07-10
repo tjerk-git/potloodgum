@@ -1,10 +1,11 @@
 <script lang="ts">
     import "../lib/style/global.css";
-    import FloatingButton from "$lib/components/FloatingButton.svelte";
+    import Menu from "$lib/components/Menu.svelte";
 </script>
 
-<FloatingButton />
-
-<main>
-    <slot />
-</main>
+<div class="app">
+    <Menu />
+    <main class="container">
+        <slot />
+    </main>
+</div>
