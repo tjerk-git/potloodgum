@@ -14,7 +14,30 @@
     </div>
 </div>
 
+<div class="hoverable">
+    <h2>De gumfactor</h2>
+    Denker in pixels, schetser van code, Potloodgum* brengt jouw verhaal online.
+
+    <aside>
+        * Potloodgum bestaat stiekem alleen uit <a
+            href="https://www.linkedin.com/in/tjerk-dijkstra/"
+            target="_blank">Tjerk</a
+        >
+    </aside>
+</div>
+
 <style>
+    aside {
+        font-size: 0.4rem;
+        font-style: italic;
+        color: #eaeaea;
+    }
+
+    h2 {
+        color: white;
+        text-shadow: -5px 5px 0px #fd71f2;
+    }
+
     .vertical-text {
         display: flex;
         flex-direction: column;
@@ -41,11 +64,15 @@
     .mirror-container {
         display: flex;
         width: 100%;
-        height: 50vh;
         justify-content: center;
+        margin-top: var(--baseline);
+        height: 810px;
+        margin-bottom: var(--baseline);
     }
-    .payoff-container {
-        display: flex;
-        justify-content: center;
+
+    @media (max-width: 600px) {
+        .mirror-container {
+            height: 265px;
+        }
     }
 </style>

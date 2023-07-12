@@ -23,16 +23,20 @@
   };
 </script>
 
-<button aria-label="menu" on:click={toggleMenu}>Menu</button>
+<button aria-label="menu" class="hoverable" on:click={toggleMenu}>Menu</button>
 
 <div class="menu-container {isMenuShown ? 'show' : 'hide'}">
   <nav>
     <ul>
       <li>
-        <a href="/" class="hover-underline-animation">Home</a>
+        <a href="/" class="hover-underline-animation" on:click={toggleMenu}
+          >Home</a
+        >
       </li>
       <li>
-        <a href="/about" class="hover-underline-animation">About</a>
+        <a href="/about" class="hover-underline-animation" on:click={toggleMenu}
+          >About</a
+        >
       </li>
     </ul>
   </nav>
@@ -93,15 +97,8 @@
   }
 
   nav ul li a {
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-bottom: 0;
-    margin-left: -76px;
-    padding-left: 0;
     display: flex;
-    font-size: 8rem;
+    font-size: 8vw;
     color: white;
     text-decoration: none;
   }
