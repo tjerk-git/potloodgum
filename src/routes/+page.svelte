@@ -16,8 +16,10 @@
 
 <div class="hoverable">
     <h2>De gumfactor</h2>
-    Denker in pixels, schetser van code, Potloodgum* brengt jouw verhaal online.
-
+    <p class="white-shadow">
+        Denker in pixels, schetser van code, Potloodgum* brengt jouw verhaal
+        online.
+    </p>
     <aside>
         * Potloodgum bestaat stiekem alleen uit <a
             href="https://www.linkedin.com/in/tjerk-dijkstra/"
@@ -27,6 +29,11 @@
 </div>
 
 <style>
+    .white-shadow {
+        color: #eeeeee;
+        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+    }
+
     aside {
         font-size: 0.4rem;
         font-style: italic;

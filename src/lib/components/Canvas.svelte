@@ -39,10 +39,17 @@
 
 <canvas
   id="myCanvas"
-  width="800"
-  height="600"
-  style="width: 800px; height: 600px; border:1px solid #c3c3c3;"
   on:mousedown={handleMouseDown}
   on:mouseup={handleMouseUp}
   on:mousemove={handleMouseMove}
 />
+
+<style>
+  canvas {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #c3c3c3;
+    margin-top: var(--baseline);
+    margin-bottom: var(--baseline);
+  }
+</style>

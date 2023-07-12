@@ -30,12 +30,14 @@
     <ul>
       <li>
         <a href="/" class="hover-underline-animation" on:click={toggleMenu}
-          >Home</a
+          >Potloodgum</a
         >
       </li>
       <li>
-        <a href="/about" class="hover-underline-animation" on:click={toggleMenu}
-          >About</a
+        <a
+          href="/contact"
+          class="hover-underline-animation"
+          on:click={toggleMenu}>Contact</a
         >
       </li>
     </ul>
