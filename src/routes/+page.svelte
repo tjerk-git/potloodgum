@@ -1,3 +1,9 @@
+<script>
+    import Canvas from "$lib/components/Canvas.svelte";
+    import Hamaki from "$lib/components/Hamaki.svelte";
+    import Sneup from "$lib/components/Sneup.svelte";
+</script>
+
 <div class="mirror-container">
     <div class="vertical-text">
         <h1><span class="faded-text">Potloodgum</span></h1>
@@ -28,14 +34,52 @@
     </aside>
 </div>
 
+<div class="hoverable">
+    <h2>gumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgum</h2>
+    Teken hieronder waar je hulp nodig bij hebt en verstuur het!
+
+    <div class="canvas-container">
+        <Canvas />
+    </div>
+</div>
+
+<div class="hoverable">
+    <h2>werkwerkwerkwerkwerkwerkwerkwerkwerkwerkwerkwerkwerkwerk</h2>
+
+    <div class="logo-container">
+        <a href="https://hamaki.pro"><Hamaki /></a>
+        <a href="https://sneup.it" target="_blank"><Sneup /> </a>
+    </div>
+</div>
+
 <style>
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .hoverable {
+        text-align: center;
+    }
+
+    p {
+        font-size: 3vw;
+    }
+
     .white-shadow {
         color: #eeeeee;
         text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
     }
 
+    .rotate {
+        animation: rotate 2s infinite linear;
+    }
+
     aside {
-        font-size: 0.4rem;
+        font-size: 0.9rem;
         font-style: italic;
         color: #eaeaea;
     }
@@ -73,13 +117,22 @@
         width: 100%;
         justify-content: center;
         margin-top: var(--baseline);
-        height: 810px;
+        height: 78vw;
         margin-bottom: var(--baseline);
     }
 
     @media (max-width: 600px) {
         .mirror-container {
             height: 265px;
+        }
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
         }
     }
 </style>
