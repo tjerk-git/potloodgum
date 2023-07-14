@@ -35,7 +35,7 @@
 </div>
 
 <div class="hoverable">
-    <h2>gumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgumgum</h2>
+    <h2>gumgumgumgumgumgu</h2>
     Teken hieronder waar je hulp nodig bij hebt en verstuur het!
 
     <div class="canvas-container">
@@ -44,7 +44,7 @@
 </div>
 
 <div class="hoverable">
-    <h2>werkwerkwerkwerkwerkwerkwerkwerkwerkwerkwerkwerkwerkwerk</h2>
+    <h2>werkwerkwerkwerk</h2>
 
     <div class="logo-container">
         <a href="https://hamaki.pro"><Hamaki /></a>
