@@ -20,7 +20,7 @@
     </div>
 </div>
 
-<div class="hoverable">
+<section>
     <h2>De gumfactor</h2>
     <p class="white-shadow">
         Denker in pixels, schetser van code, Potloodgum* brengt jouw verhaal
@@ -28,29 +28,20 @@
     </p>
     <aside>
         * Potloodgum bestaat stiekem alleen uit <a
-            href="https://www.linkedin.com/in/tjerk-dijkstra/"
+            href="https://mastodon.social/@chairk"
             target="_blank">Tjerk</a
         >
     </aside>
-</div>
+</section>
 
-<div class="hoverable">
-    <h2>gumgumgumgumgumgu</h2>
-    Teken hieronder waar je hulp nodig bij hebt en verstuur het!
-
-    <div class="canvas-container">
-        <Canvas />
-    </div>
-</div>
-
-<div class="hoverable">
+<section>
     <h2>werkwerkwerkwerk</h2>
 
     <div class="logo-container">
         <a href="https://hamaki.pro"><Hamaki /></a>
         <a href="https://sneup.it" target="_blank"><Sneup /> </a>
     </div>
-</div>
+</section>
 
 <style>
     .logo-container {
@@ -61,25 +52,18 @@
         width: 100%;
     }
 
-    .hoverable {
-        text-align: center;
-    }
-
     p {
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
 
     .white-shadow {
         color: #eeeeee;
         text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
-    }
-
-    .rotate {
-        animation: rotate 2s infinite linear;
+        line-height: normal;
     }
 
     aside {
-        font-size: 0.9rem;
+        font-size: 1rem;
         font-style: italic;
         color: #eaeaea;
     }
@@ -110,6 +94,7 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        user-select: none;
     }
 
     .mirror-container {

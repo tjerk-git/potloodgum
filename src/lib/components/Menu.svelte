@@ -1,6 +1,7 @@
 <script>
   import Cross from "$lib/components/Cross.svelte";
   import { onMount } from "svelte";
+  import * as animateScroll from "svelte-scrollto";
 
   onMount(() => {
     const handleKeyDown = (/** @type {{ key: string; }} */ event) => {
@@ -19,6 +20,7 @@
   let isMenuShown = false;
 
   const toggleMenu = () => {
+    animateScroll.scrollToTop();
     isMenuShown = !isMenuShown;
   };
 </script>

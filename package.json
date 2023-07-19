@@ -22,6 +22,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"curseur": "^0.0.8"
+		"curseur": "^0.0.8",
+		"svelte-scrollto": "^0.2.0"
 	}
 }
