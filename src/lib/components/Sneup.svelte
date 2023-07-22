@@ -1,6 +1,6 @@
 <svg
   version="1.1"
-  viewBox="0 0 1000 500"
+  viewBox="0 0 1000 1000"
   xml:space="preserve"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -47,7 +47,7 @@
 
 <style>
   svg {
-    width: 20vw;
+    width: 40vw;
     height: 20vh;
   }
 </style>

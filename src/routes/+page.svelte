@@ -63,7 +63,7 @@
     }
 
     aside {
-        font-size: 1rem;
+        font-size: 1vw;
         font-style: italic;
         color: #eaeaea;
     }
