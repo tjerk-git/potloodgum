@@ -45,15 +45,18 @@
 
 <style>
     .logo-container {
-        display: flex;
+        display: grid;
         justify-content: center;
         align-items: center;
         gap: 1rem;
         width: 100%;
     }
+    section {
+        margin-bottom: var(--baseline);
+    }
 
     p {
-        font-size: 3.5vw;
+        font-size: 4.5vw;
     }
 
     .white-shadow {
@@ -63,7 +66,7 @@
     }
 
     aside {
-        font-size: 1vw;
+        font-size: 2vw;
         font-style: italic;
         color: #eaeaea;
     }
@@ -109,15 +112,6 @@
     @media (max-width: 600px) {
         .mirror-container {
             height: 265px;
-        }
-    }
-
-    @keyframes rotate {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
         }
     }
 </style>

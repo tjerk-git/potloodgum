@@ -57,7 +57,7 @@
 
 <style>
   svg {
-    width: 20vw;
-    height: 20vh;
+    width: 10vw;
+    height: 10vh;
   }
 </style>

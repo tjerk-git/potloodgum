@@ -15,8 +15,6 @@
     flag = true;
     start.x = event.clientX;
     start.y = event.clientY;
-
-    console.log(start.x, start.y);
   }
 
   function handleMouseUp(event) {
@@ -66,7 +64,7 @@
     const imageDataUrl = canvas.toDataURL();
 
     // Send the imageDataUrl to the server or use it as needed
-    console.log("Image Data URL:", imageDataUrl);
+    //console.log("Image Data URL:", imageDataUrl);
   }
 
   onMount(() => {
@@ -83,7 +81,7 @@
 />
 
 <button class="button" on:click={clearArea}>Opnieuw</button>
-<button class="button" on:click={send}>Versturen</button>
+<button class="button" on:click={send}>Opslaan</button>
 
 <style>
   canvas {
@@ -95,7 +93,9 @@
     background: white;
     margin-top: --var(baseline);
     border: 2px solid #c3c3c3;
+    margin-bottom: var(--baseline);
   }
+
   button {
     color: #f5f3ef;
     text-align: center;
