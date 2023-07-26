@@ -47,7 +47,14 @@
 
 <style>
   svg {
-    width: 40vw;
-    height: 20vh;
+    width: 31vw;
+    height: 10vh;
+  }
+
+  @media (min-width: 860px) {
+    svg {
+      width: 31vw;
+      height: 31vh;
+    }
   }
 </style>
