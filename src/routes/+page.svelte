@@ -31,7 +31,6 @@
             rel="me"
             href="https://mastodon.social/@chairk">Tjerk</a
         >
-        >
     </aside>
 </section>
 
