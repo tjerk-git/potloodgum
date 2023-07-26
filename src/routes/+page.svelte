@@ -28,8 +28,9 @@
     </p>
     <aside>
         * Potloodgum bestaat stiekem alleen uit <a
-            href="https://mastodon.social/@chairk"
-            target="_blank">Tjerk</a
+            rel="me"
+            href="https://mastodon.social/@chairk">Tjerk</a
+        >
         >
     </aside>
 </section>
