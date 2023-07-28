@@ -63,13 +63,12 @@
   function send() {
     const imageDataUrl = canvas.toDataURL();
 
-    // use fetch to send this image data to /contact
-    fetch("http://127.0.0.1:5000/post_endpoint", {
+    const formData = new FormData();
+    formData.append("image", imageDataUrl);
+
+    fetch("/contact", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ imageDataUrl }),
+      body: formData,
     })
       .then((response) => {
         if (!response.ok) {
@@ -78,16 +77,12 @@
         return response.json();
       })
       .then((data) => {
-        // Handle the response from the server if needed
-        console.log("Server response:", data);
+        console.log("Data from the server:", data);
+        // You can now process the 'data' as needed
       })
       .catch((error) => {
-        // Handle errors here
-        console.error("Error:", error);
+        console.error("Error during fetch:", error);
       });
-
-    // Send the imageDataUrl to the server or use it as needed
-    // console.log("Image Data URL:", imageDataUrl);
   }
 
   onMount(() => {

@@ -1,6 +1,5 @@
 <script>
   import Canvas from "$lib/components/Canvas.svelte";
-  let message;
 </script>
 
 <section>
