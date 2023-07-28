@@ -63,8 +63,31 @@
   function send() {
     const imageDataUrl = canvas.toDataURL();
 
+    // use fetch to send this image data to /contact
+    fetch("http://127.0.0.1:5000/post_endpoint", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ imageDataUrl }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Handle the response from the server if needed
+        console.log("Server response:", data);
+      })
+      .catch((error) => {
+        // Handle errors here
+        console.error("Error:", error);
+      });
+
     // Send the imageDataUrl to the server or use it as needed
-    //console.log("Image Data URL:", imageDataUrl);
+    // console.log("Image Data URL:", imageDataUrl);
   }
 
   onMount(() => {
@@ -81,7 +104,7 @@
 />
 
 <button class="button" on:click={clearArea}>Opnieuw</button>
-<button class="button" on:click={send}>Opslaan</button>
+<button class="button" on:click={send}>Aanschouw mijn meesterwerk</button>
 
 <style>
   canvas {

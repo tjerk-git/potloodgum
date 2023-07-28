@@ -3,38 +3,30 @@
   let message;
 </script>
 
-<h2>Stuur mij maar* een tekening...</h2>
-<aside>
-  *je mag ook "gewoon" een <a href="mailto:tjerk.dijkstra@icloud.com">bericht</a
-  > sturen
-</aside>
+<section>
+  <h2>Stuur mij maar* een tekening...</h2>
 
-<form method="POST" action="/contact">
-  <label for="email">Je emailadres:</label>
-  <input type="text" name="email" id="email" required />
+  <h3>Je kunstwerk:</h3>
+  <Canvas />
 
-  <label for="message">Je bericht</label><textarea
-    class="textarea"
-    placeholder="..."
-    rows="10"
-    id="message"
-    name="message"
-  />
-
-  <input type="hidden" name="image" />
-
-  <button> Formulier versturen </button>
-</form>
-
-<h3>Je kunstwerk:</h3>
-<Canvas />
+  <aside>
+    *je mag ook "gewoon" een <a href="mailto:tjerk.dijkstra@icloud.com"
+      >bericht</a
+    > sturen
+  </aside>
+</section>
 
 <style>
+  section {
+    background: white;
+    padding: 6.6vw 20px 12vw;
+  }
   aside {
     font-size: 2.5vw;
     font-style: italic;
-    color: #eaeaea;
+    color: #4b4848;
     margin-bottom: var(--baseline);
+    margin-top: var(--baseline);
   }
 
   label {
@@ -42,7 +34,7 @@
   }
 
   h2 {
-    color: white;
+    color: rgb(33, 32, 32);
     margin-top: 5rem;
   }
 
