@@ -34,7 +34,7 @@
 
     <div class="skills">
         <h3>Webdevelopment</h3>
-        <p>Op maat webdesign, front-end en back-end</p>
+        <p>Op maat gemaakte (web)applicaties, front-end en back-end</p>
 
         <div class="line" />
 
@@ -44,7 +44,10 @@
         <div class="line" />
 
         <h3>Design thinking</h3>
-        <p>Het inrichten en opzetten van een mensgericht product.</p>
+        <p>
+            Strategie en creativiteit wat betreft het ontwikkelen van alles
+            mensgericht
+        </p>
     </div>
 </section>
 <div class="divider" />
@@ -67,8 +70,8 @@
     }
 
     .skills {
-        margin-top: 2rem;
-        grid-column-gap: 4rem;
+        margin-top: var(--baseline);
+        grid-column-gap: var(--baseline);
         flex-direction: column;
         justify-content: space-between;
         display: flex;
@@ -80,6 +83,7 @@
         perspective-origin: 50%;
         transform-origin: 50%;
         background-color: #1e1e21;
+        margin-bottom: var(--baseline);
     }
 
     .line-vertical {
@@ -93,7 +97,7 @@
     .logo-container {
         width: 100%;
         display: flex;
-        margin-top: 5rem;
+        margin-top: var(--baseline);
     }
 
     .divider {
@@ -117,6 +121,8 @@
         font-size: 2vw;
         font-style: italic;
         color: #262525;
+        margin-bottom: calc(var(--baseline) * 4);
+        margin-top: var(--baseline);
     }
 
     h2 {
