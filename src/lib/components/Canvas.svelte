@@ -32,8 +32,8 @@
 
       var ctx = canvas.getContext("2d");
       var rect = canvas.getBoundingClientRect();
-      var offsetX = rect.left;
-      var offsetY = rect.top;
+      var offsetX = rect.left + window.scrollX;
+      var offsetY = rect.top - window.scrollY + 75;
 
       ctx.beginPath();
       ctx.fillStyle = penColor;
@@ -41,8 +41,8 @@
       ctx.lineWidth = 10;
       ctx.lineJoin = "round";
       ctx.lineTo(end.x - offsetX, end.y - offsetY);
-
       ctx.stroke();
+
       start.x = end.x;
       start.y = end.y;
     }
