@@ -1,3 +1,5 @@
+import { POSTMARK_TOKEN } from '$env/static/private';
+
 import postmark from "postmark";
 
 /** @type {import('./$types').Actions} */
@@ -14,7 +16,7 @@ export const actions = {
     }
 
     const postmarkClient = new postmark.ServerClient(
-      "0759c87d-5e86-48f2-8b1d-21a174f9bae4"
+      POSTMARK_TOKEN
     );
 
     const emailOptions = {
@@ -41,32 +43,6 @@ export const actions = {
       .catch((error) => {
         console.log("Error sending email:", error.message);
       });
-
-    // const requestBody = {
-    //   image: imageDataUrl,
-    //   email: email
-    // };
-
-    // fetch("https://drawing-canvas-api.fly.dev/image_processing", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(requestBody),
-    // })
-    //   .then((response) => {
-    //     if (!response.ok) {
-    //       throw new Error("Network response was not ok");
-    //     }
-    //     return response.json();
-    //   })
-    //   .then((data) => {
-    //     console.log("Response from the Python API:", data);
-    //     // Process the response data as needed
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error during fetch:", error);
-    //   });
 
 
     return { success: true };

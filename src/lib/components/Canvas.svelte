@@ -13,6 +13,8 @@
   let canvas;
   let email;
 
+  let mailIsSent = false;
+
   function handleMouseDown(event) {
     flag = true;
     start.x = event.clientX;
@@ -68,18 +70,20 @@
     const imageDataUrl = canvas.toDataURL();
     const imageBuffer = imageDataUrl.split(",")[1];
 
-    //sendEmail(imageBuffer, email);
-
-    // Swal.fire({
-    //   title: "Dankjewel wat lief!",
-    //   text: "Uw meesterwerk is verzonden!",
-    //   icon: "success",
-    // });
-
     const formData = new FormData();
     formData.append("image", imageBuffer);
     formData.append("email", email);
     formData.append("filename", generateRandomName());
+
+    if (!email) {
+      Swal.fire({
+        title: "Ik heb nog een e-mailadres nodig",
+        text: "Anders weet ik niet van wie dit is...",
+        icon: "warning",
+      });
+
+      return;
+    }
 
     fetch("/contact", {
       method: "POST",
@@ -97,6 +101,8 @@
           text: "Uw meesterwerk is verzonden!",
           icon: "success",
         });
+
+        mailIsSent = true;
       })
       .catch((error) => {
         console.error("Error during fetch:", error);
@@ -107,65 +113,55 @@
     return `${Date.now()}${Math.random().toString(36).substring(2, 8)}.png`;
   }
 
-  function sendEmail(imageBuffer, email) {
-    console.log("sending an email");
-
-    if (!email) {
-      email = "empty string i guess";
-    }
-
-    const postmarkClient = new postmark.ServerClient(
-      "0759c87d-5e86-48f2-8b1d-21a174f9bae4"
-    );
-
-    const emailOptions = {
-      From: "appointments@hamaki.pro",
-      To: "tjerk.dijkstra@icloud.com",
-      Subject: "somebody wants to reach you!",
-      TextBody: "A new artwork from potloodgum.com",
-      MessageStream: "outbound",
-    };
-
-    const attachment = {
-      Name: generateRandomName(),
-      Content: imageBuffer,
-      ContentType: "image/png",
-    };
-
-    emailOptions.Attachments = [attachment];
-
-    postmarkClient
-      .sendEmail(emailOptions)
-      .then((result) => {
-        console.log("Email sent:", result);
-      })
-      .catch((error) => {
-        console.log("Error sending email:", error.message);
-      });
-  }
-
   onMount(() => {
     resizeCanvas();
     mapTouchToMouseFor("canvas");
   });
 </script>
 
-<canvas
-  bind:this={canvas}
-  on:mousedown={handleMouseDown}
-  on:mouseup={handleMouseUp}
-  on:mousemove={handleMouseMove}
-/>
+{#if !mailIsSent}
+  <h2>Stuur mij maar* een tekening...</h2>
 
-<label for="email">Je e-mailadres:</label>
-<input type="text" bind:value={email} required />
+  <h3>Je kunstwerk:</h3>
+  <canvas
+    bind:this={canvas}
+    on:mousedown={handleMouseDown}
+    on:mouseup={handleMouseUp}
+    on:mousemove={handleMouseMove}
+  />
 
-<div class="buttons">
-  <button class="button" on:click={clearArea}>Opnieuw</button>
-  <button class="button" on:click={send}>Aanschouw mijn meesterwerk</button>
-</div>
+  <label for="email">Je e-mailadres:</label>
+  <input type="email" id="email" bind:value={email} required />
+
+  <div class="buttons">
+    <button class="button" on:click={clearArea}>Opnieuw</button>
+    <button class="button" on:click={send}>Aanschouw mijn meesterwerk</button>
+  </div>
+{:else}
+  <h2 class="rotate">
+    Dank dank dank dank dank dank dank dank dank dank dank dank dank dank dank
+  </h2>
+  <h2 class="rotate-other">
+    Dank dank dank dank dank dank dank dank dank dank dank dank dank dank dank
+  </h2>
+{/if}
 
 <style>
+  h2 {
+    color: rgb(33, 32, 32);
+    margin-top: 4rem;
+  }
+
+  h3 {
+    margin-top: var(--baseline);
+    margin-bottom: var(--baseline);
+  }
+  .rotate {
+    transform: rotate(30deg);
+  }
+  .rotate-other {
+    transform: rotate(209deg);
+  }
   canvas {
     -webkit-touch-callout: none;
     -ms-touch-action: none;
