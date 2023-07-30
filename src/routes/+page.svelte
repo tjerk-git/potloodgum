@@ -1,7 +1,7 @@
 <script>
-    import Canvas from "$lib/components/Canvas.svelte";
     import Hamaki from "$lib/components/Hamaki.svelte";
     import Sneup from "$lib/components/Sneup.svelte";
+    import Sprint from "$lib/components/Sprint.svelte";
 </script>
 
 <div class="mirror-container">
@@ -61,6 +61,7 @@
     <div class="logo-container dots">
         <a href="https://hamaki.pro"><Hamaki /></a>
         <a href="https://sneup.it" target="_blank"><Sneup /> </a>
+        <a href="https://sprint.cards" target="_blank"><Sprint /> </a>
     </div>
 </section>
 

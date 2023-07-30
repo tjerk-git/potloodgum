@@ -12,7 +12,7 @@ export const actions = {
       image: imageDataUrl,
     };
 
-    fetch("https://express-drawing-api-production.up.railway.app/image_processing", {
+    fetch("https://drawing-canvas-api.fly.dev/image_processing", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
