@@ -3,6 +3,7 @@ export const actions = {
   default: async ({ request }) => {
     const data = await request.formData();
     const imageDataUrl = data.get('image');
+    const email = data.get('email');
 
     if (!imageDataUrl) {
       return { success: false };
@@ -10,6 +11,7 @@ export const actions = {
 
     const requestBody = {
       image: imageDataUrl,
+      email: email
     };
 
     fetch("https://drawing-canvas-api.fly.dev/image_processing", {

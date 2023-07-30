@@ -4,12 +4,14 @@
 
 <script>
   import { onMount } from "svelte";
+  import Swal from "sweetalert2";
 
   let start = { x: 0, y: 0 };
   let end = { x: 0, y: 0 };
   let flag = false;
   let penColor = "#000";
   let canvas;
+  let email;
 
   function handleMouseDown(event) {
     flag = true;
@@ -71,6 +73,7 @@
 
     const formData = new FormData();
     formData.append("image", imageDataUrl);
+    formData.append("email", email);
 
     fetch("/contact", {
       method: "POST",
@@ -83,8 +86,11 @@
         return response.json();
       })
       .then((data) => {
-        console.log("Data from the server:", data);
-        // You can now process the 'data' as needed
+        Swal.fire({
+          title: "Dankjewel wat lief!",
+          text: "Uw meesterwerk is verzonden!",
+          icon: "success",
+        });
       })
       .catch((error) => {
         console.error("Error during fetch:", error);
@@ -104,8 +110,13 @@
   on:mousemove={handleMouseMove}
 />
 
-<button class="button" on:click={clearArea}>Opnieuw</button>
-<button class="button" on:click={send}>Aanschouw mijn meesterwerk</button>
+<label for="email">Je e-mailadres:</label>
+<input type="text" bind:value={email} required />
+
+<div class="buttons">
+  <button class="button" on:click={clearArea}>Opnieuw</button>
+  <button class="button" on:click={send}>Aanschouw mijn meesterwerk</button>
+</div>
 
 <style>
   canvas {
@@ -118,6 +129,26 @@
     margin-top: --var(baseline);
     border: 2px solid #c3c3c3;
     margin-bottom: var(--baseline);
+  }
+
+  .buttons {
+    margin-bottom: var(--baseline);
+    margin-top: var(--baseline);
+    display: flex;
+    width: 100%;
+  }
+
+  label {
+    width: 100%;
+    font-weight: bold;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c3c3c3;
+    margin-bottom: var(--baseline);
+    margin-top: var(--baseline);
   }
 
   button {
