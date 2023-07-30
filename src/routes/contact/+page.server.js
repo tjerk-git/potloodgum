@@ -14,7 +14,7 @@ export const actions = {
       image: imageDataUrl,
     };
 
-    fetch("http://127.0.0.1:5000/image_processing", {
+    fetch("https://express-drawing-api-production.up.railway.app/image_processing", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
