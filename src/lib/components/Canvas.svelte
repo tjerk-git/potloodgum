@@ -32,8 +32,8 @@
 
       var ctx = canvas.getContext("2d");
       var rect = canvas.getBoundingClientRect();
-      var offsetX = rect.left + window.scrollX;
-      var offsetY = rect.top - window.scrollY + 75;
+      var offsetX = rect.left;
+      var offsetY = rect.top;
 
       ctx.beginPath();
       ctx.fillStyle = penColor;
