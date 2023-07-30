@@ -52,19 +52,37 @@
 </section>
 <div class="divider" />
 
-<section style="background-color:#FF8758">
+<section class="pink">
     <h2 class="turn">werkwerkwerkwerkwerk</h2>
     <h2>werkwerkwerkwerkwerk</h2>
 
     <div class="line" />
 
-    <div class="logo-container">
+    <div class="logo-container dots">
         <a href="https://hamaki.pro"><Hamaki /></a>
         <a href="https://sneup.it" target="_blank"><Sneup /> </a>
     </div>
 </section>
 
 <style>
+    .pink {
+        background-color: #c87eae;
+    }
+    .dots {
+        background: linear-gradient(
+                    90deg,
+                    var(--bg-color) calc(var(--dot-space) - var(--dot-size)),
+                    transparent 1%
+                )
+                center,
+            linear-gradient(
+                    var(--bg-color) calc(var(--dot-space) - var(--dot-size)),
+                    transparent 1%
+                )
+                center,
+            var(--dot-color);
+        background-size: var(--dot-space) var(--dot-space);
+    }
     .turn {
         transform: rotate(180deg);
     }
@@ -98,6 +116,7 @@
         width: 100%;
         display: flex;
         margin-top: var(--baseline);
+        padding: var(--baseline);
     }
 
     .divider {

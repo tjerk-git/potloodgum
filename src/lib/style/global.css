@@ -25,7 +25,8 @@
     /* de zijkanten van het boek */
     --gutter: 2rem;
     /* tussen de columns */
-
+    --bg-color: #C87EAE;
+    --dot-color: white;
     --pink: #C87EAE;
     --red: #FF3B3A;
     --orange: #FF8758;
@@ -34,6 +35,8 @@
     --blue: #6E9BCF;
     --grey: #CACBC8;
     --off-black: #413a37;
+    --dot-size: 2px;
+    --dot-space: 22px;
 }
 
 body {
