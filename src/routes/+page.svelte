@@ -105,14 +105,6 @@
         margin-bottom: var(--baseline);
     }
 
-    .line-vertical {
-        width: 2px;
-        height: 100%;
-        perspective-origin: 50%;
-        transform-origin: 50%;
-        background-color: #1e1e21;
-    }
-
     .logo-container {
         width: 100%;
         display: flex;
@@ -129,12 +121,6 @@
     section {
         background: white;
         padding: 6.6vw 20px 12vw;
-    }
-
-    .white-shadow {
-        color: #eeeeee;
-        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
-        line-height: normal;
     }
 
     aside {
