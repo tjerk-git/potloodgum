@@ -8,8 +8,6 @@ export const actions = {
       return { success: false };
     }
 
-    // const base64ImageData = imageDataUrl.split(',')[1]; // Extract the base64 string from the data URL
-
     const requestBody = {
       image: imageDataUrl,
     };
