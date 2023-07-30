@@ -1,39 +1,72 @@
+import postmark from "postmark";
+
 /** @type {import('./$types').Actions} */
 export const actions = {
   default: async ({ request }) => {
     const data = await request.formData();
     const imageDataUrl = data.get('image');
     const email = data.get('email');
+    const filename = data.get('filename');
+
 
     if (!imageDataUrl) {
       return { success: false };
     }
 
-    const requestBody = {
-      image: imageDataUrl,
-      email: email
+    const postmarkClient = new postmark.ServerClient(
+      "0759c87d-5e86-48f2-8b1d-21a174f9bae4"
+    );
+
+    const emailOptions = {
+      From: "appointments@hamaki.pro",
+      To: "tjerk.dijkstra@icloud.com",
+      Subject: "somebody wants to reach you!",
+      TextBody: `A new artwork from potloodgum.com, ${email}`,
+      MessageStream: "outbound",
     };
 
-    fetch("https://drawing-canvas-api.fly.dev/image_processing", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(requestBody),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Response from the Python API:", data);
-        // Process the response data as needed
+    const attachment = {
+      Name: filename,
+      Content: imageDataUrl,
+      ContentType: "image/png",
+    };
+
+    emailOptions.Attachments = [attachment];
+
+    postmarkClient
+      .sendEmail(emailOptions)
+      .then((result) => {
+        console.log("Email sent:", result);
       })
       .catch((error) => {
-        console.error("Error during fetch:", error);
+        console.log("Error sending email:", error.message);
       });
+
+    // const requestBody = {
+    //   image: imageDataUrl,
+    //   email: email
+    // };
+
+    // fetch("https://drawing-canvas-api.fly.dev/image_processing", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(requestBody),
+    // })
+    //   .then((response) => {
+    //     if (!response.ok) {
+    //       throw new Error("Network response was not ok");
+    //     }
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     console.log("Response from the Python API:", data);
+    //     // Process the response data as needed
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error during fetch:", error);
+    //   });
 
 
     return { success: true };

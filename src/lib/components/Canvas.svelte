@@ -23,10 +23,6 @@
     flag = false;
   }
 
-  function handleEraser(event) {
-    //penColor = "#fff";
-  }
-
   function handleMouseMove(event) {
     if (flag) {
       end.x = event.clientX;
@@ -70,10 +66,20 @@
 
   function send() {
     const imageDataUrl = canvas.toDataURL();
+    const imageBuffer = imageDataUrl.split(",")[1];
+
+    //sendEmail(imageBuffer, email);
+
+    // Swal.fire({
+    //   title: "Dankjewel wat lief!",
+    //   text: "Uw meesterwerk is verzonden!",
+    //   icon: "success",
+    // });
 
     const formData = new FormData();
-    formData.append("image", imageDataUrl);
+    formData.append("image", imageBuffer);
     formData.append("email", email);
+    formData.append("filename", generateRandomName());
 
     fetch("/contact", {
       method: "POST",
@@ -94,6 +100,47 @@
       })
       .catch((error) => {
         console.error("Error during fetch:", error);
+      });
+  }
+
+  function generateRandomName() {
+    return `${Date.now()}${Math.random().toString(36).substring(2, 8)}.png`;
+  }
+
+  function sendEmail(imageBuffer, email) {
+    console.log("sending an email");
+
+    if (!email) {
+      email = "empty string i guess";
+    }
+
+    const postmarkClient = new postmark.ServerClient(
+      "0759c87d-5e86-48f2-8b1d-21a174f9bae4"
+    );
+
+    const emailOptions = {
+      From: "appointments@hamaki.pro",
+      To: "tjerk.dijkstra@icloud.com",
+      Subject: "somebody wants to reach you!",
+      TextBody: "A new artwork from potloodgum.com",
+      MessageStream: "outbound",
+    };
+
+    const attachment = {
+      Name: generateRandomName(),
+      Content: imageBuffer,
+      ContentType: "image/png",
+    };
+
+    emailOptions.Attachments = [attachment];
+
+    postmarkClient
+      .sendEmail(emailOptions)
+      .then((result) => {
+        console.log("Email sent:", result);
+      })
+      .catch((error) => {
+        console.log("Error sending email:", error.message);
       });
   }
 

@@ -23,6 +23,7 @@
 	"type": "module",
 	"dependencies": {
 		"curseur": "^0.0.8",
+		"postmark": "^3.0.18",
 		"svelte-email": "^0.0.4",
 		"svelte-scrollto": "^0.2.0",
 		"svelte-touch-to-mouse": "^1.0.0",
