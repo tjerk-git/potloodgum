@@ -16,7 +16,7 @@ export const actions = {
     }
 
     const postmarkClient = new postmark.ServerClient(
-      POSTMARK_TOKEN
+      "0759c87d-5e86-48f2-8b1d-21a174f9bae4"
     );
 
     const emailOptions = {
