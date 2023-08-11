@@ -2,6 +2,7 @@
     import Hamaki from "$lib/components/Hamaki.svelte";
     import Sneup from "$lib/components/Sneup.svelte";
     import Sprint from "$lib/components/Sprint.svelte";
+    import Logo from "$lib/components/Logo.svelte";
 </script>
 
 <div class="mirror-container">
@@ -21,6 +22,7 @@
 </div>
 
 <section>
+    <Logo />
     <h2>
         Denker in pixels, schetser van code, Potloodgum* brengt jouw verhaal
         online.
@@ -66,6 +68,20 @@
 </section>
 
 <style>
+    .scroll-up {
+        position: fixed;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+    }
+
+    .scroll-down {
+        position: fixed;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+
     .pink {
         background-color: #c87eae;
     }
