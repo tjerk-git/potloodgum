@@ -25,7 +25,7 @@
   };
 </script>
 
-<button aria-label="menu" class="hoverable" on:click={toggleMenu}>Menu</button>
+<button aria-label="menu" class="" on:click={toggleMenu}>Menu</button>
 
 <div class="menu-container {isMenuShown ? 'show' : 'hide'}">
   <nav>

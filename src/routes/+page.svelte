@@ -23,10 +23,10 @@
 
 <section>
     <Logo />
-    <h2>
+    <h1 class="smaller-text">
         Denker in pixels, schetser van code, Potloodgum* brengt jouw verhaal
         online.
-    </h2>
+    </h1>
     <aside>
         * Potloodgum bestaat stiekem alleen uit <a
             rel="me"
@@ -68,20 +68,6 @@
 </section>
 
 <style>
-    .scroll-up {
-        position: fixed;
-        top: 50%;
-        left: 20px;
-        transform: translateY(-50%);
-    }
-
-    .scroll-down {
-        position: fixed;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-    }
-
     .pink {
         background-color: #c87eae;
     }
@@ -110,6 +96,11 @@
         flex-direction: column;
         justify-content: space-between;
         display: flex;
+    }
+
+    .smaller-text {
+        font-size: 3.5vw;
+        font-weight: 400;
     }
 
     .line {
@@ -183,7 +174,7 @@
         width: 100%;
         justify-content: center;
         margin-top: var(--baseline);
-        height: 78vw;
+        height: 120vh;
         margin-bottom: var(--baseline);
     }
 </style>
