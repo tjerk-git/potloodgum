@@ -30,7 +30,7 @@
     <aside>
         * Potloodgum bestaat stiekem alleen uit <a
             rel="me"
-            href="https://mastodon.social/@chairk">Tjerk</a
+            href="https://mastodon.design/@potloodgum">Tjerk</a
         >
     </aside>
 
