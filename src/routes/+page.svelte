@@ -102,14 +102,6 @@
         transform: rotate(180deg);
     }
 
-    .skills {
-        margin-top: var(--baseline);
-        grid-column-gap: var(--baseline);
-        flex-direction: column;
-        justify-content: space-between;
-        display: flex;
-    }
-
     .smaller-text {
         font-size: 3.5vw;
         font-weight: 400;
@@ -129,12 +121,6 @@
         display: flex;
         margin-top: var(--baseline);
         padding: var(--baseline);
-    }
-
-    .divider {
-        width: 100%;
-        height: 10vw;
-        background: black;
     }
 
     section {
