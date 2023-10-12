@@ -3,6 +3,7 @@
     import Sneup from "$lib/components/Sneup.svelte";
     import Sprint from "$lib/components/Sprint.svelte";
     import Logo from "$lib/components/Logo.svelte";
+    import Arrow from "$lib/components/Arrow.svelte";
 </script>
 
 <div class="mirror-container">
@@ -24,35 +25,46 @@
 <section>
     <Logo />
     <h1 class="smaller-text">
-        Denker in pixels, schetser van code, Potloodgum* brengt jouw verhaal
-        online.
+        Denker in pixels, schetser van code, Potloodgum brengt jouw verhaal
+        gratis* online.
     </h1>
     <aside>
-        * Potloodgum bestaat stiekem alleen uit <a
-            rel="me"
-            href="https://mastodon.design/@potloodgum">Tjerk</a
-        >
+        - <a rel="me" href="https://mastodon.design/@potloodgum">Tjerk</a>
     </aside>
 
-    <div class="skills">
-        <h3>Webdevelopment</h3>
-        <p>Op maat gemaakte (web)applicaties, front-end en back-end</p>
-
-        <div class="line" />
-
-        <h3>Digital design</h3>
-        <p>Hulp voor bijna* alles digitaal (*geen marketing)</p>
-
-        <div class="line" />
-
-        <h3>Design thinking</h3>
+    <h2>Vraag & Antwoord</h2>
+    <div class="line" />
+    <div class="qa-pair">
+        <strong>Vraag:</strong> Hoezo gratis?
         <p>
-            Strategie en creativiteit wat betreft het ontwikkelen van alles
-            mensgericht
+            <strong>Antwoord:</strong> Nee, niet helemaal gratis, een kleine bijdrage
+            voor de hosting. Die doe ik zo klimaatneutraal mogelijk trouwens.
+        </p>
+    </div>
+
+    <div class="qa-pair">
+        <strong>Vraag:</strong> Wat kan je maken dan?
+        <p>
+            <strong>Antwoord:</strong> Op maat gemaakte (web)applicaties, front-end
+            en back-end.
+        </p>
+    </div>
+
+    <div class="qa-pair">
+        <strong>Vraag:</strong> Hoe kom ik in contact met jou?
+        <p>
+            <strong>Antwoord:</strong> Neem <a href="/contact">hier</a> eens een
+            kijkje.
+        </p>
+    </div>
+    <div class="qa-pair">
+        <strong>Vraag:</strong> Waarom doe je dit?
+        <p>
+            <strong>Antwoord:</strong> Nou, andere mensen doe vrijwilligerswerk,
+            ik doe dit.
         </p>
     </div>
 </section>
-<div class="divider" />
 
 <section class="pink">
     <h2 class="turn">werkwerkwerkwerkwerk</h2>
@@ -176,5 +188,21 @@
         margin-top: var(--baseline);
         height: 120vh;
         margin-bottom: var(--baseline);
+    }
+
+    .qa-pair {
+        background-color: #f7f7f7;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .qa-pair strong {
+        font-weight: bold;
+    }
+
+    .qa-pair p {
+        margin-top: 5px;
     }
 </style>
